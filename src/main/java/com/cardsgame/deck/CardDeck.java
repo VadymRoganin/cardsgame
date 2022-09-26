@@ -21,24 +21,24 @@ public interface CardDeck {
      * Deals specified amount of cards or maximum available amount of cards in the deck.
      * Returns empty list if the deck is empty.
      *
-     * @throws IllegalArgumentException if specified amount is less than 1
      * @return Cards list
+     * @throws IllegalArgumentException if specified amount is less than 1
      */
     List<Card> dealCards(int amount);
 
     /**
      * Folds card created by this card deck. If the card is already folded, nothing happens.
      *
-     * @throws NullPointerException if provided card is null
      * @param card A card
+     * @throws NullPointerException if provided card is null
      */
     void fold(Card card);
 
     /**
      * Folds a list of cards. Folds cards created by this card deck. If the card is already folded, nothing happens.
      *
-     * @throws NullPointerException if provided cards is null
      * @param cards A list of cards to fold
+     * @throws NullPointerException if provided cards is null
      */
     void foldAll(List<Card> cards);
 

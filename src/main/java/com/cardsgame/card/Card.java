@@ -27,7 +27,6 @@ public interface Card {
      *
      * @param cardDeck A card deck which produced the card.
      * @throws IllegalArgumentException if invalid deck is supplied
-     *
      */
     void fold(CardDeck cardDeck);
 
@@ -40,6 +39,7 @@ public interface Card {
 
     /**
      * Gets card deck which created this card.
+     *
      * @return A card deck which created this card
      */
     CardDeck getCardDeck();

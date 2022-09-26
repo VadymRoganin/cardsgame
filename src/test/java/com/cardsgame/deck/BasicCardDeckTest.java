@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -53,11 +52,11 @@ public class BasicCardDeckTest {
             assertEquals(cards, deck1.dealCards(deck1.size()));
         });
         var res = IntStream.range(0, 100).mapToObj(i -> {
-            BasicCardDeck deck1 = BasicCardDeck.builder()
-                    .build();
-            deck1.shuffle();
-            return cards.equals(deck1.dealCards(deck1.size()));
-        })
+                    BasicCardDeck deck1 = BasicCardDeck.builder()
+                            .build();
+                    deck1.shuffle();
+                    return cards.equals(deck1.dealCards(deck1.size()));
+                })
                 .allMatch(b -> b);
         assertFalse(res);
     }

@@ -16,8 +16,8 @@ import java.util.function.Predicate;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static com.cardsgame.config.Constants.MINIMUM_JOKERS_AMOUNT;
 import static com.cardsgame.config.Constants.MAXIMUM_JOKERS_AMOUNT;
+import static com.cardsgame.config.Constants.MINIMUM_JOKERS_AMOUNT;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
@@ -119,9 +119,9 @@ public class BasicCardDeck implements CardDeck {
     }
 
     public static class Builder {
+        private final List<Card> initialCards = new ArrayList<>();
         private Predicate<Card> cardPredicate;
         private Integer jokersAmount;
-        private final List<Card> initialCards = new ArrayList<>();
 
         private Builder() {
         }
@@ -133,8 +133,8 @@ public class BasicCardDeck implements CardDeck {
          * so the latest supplied will have effect.
          *
          * @param cardPredicate Card predicate
-         * @throws NullPointerException if null value is supplied
          * @return BasicCardDeck builder instance
+         * @throws NullPointerException if null value is supplied
          */
         public Builder withCardPredicate(Predicate<Card> cardPredicate) {
             Objects.requireNonNull(cardPredicate, "Provided card predicate cannot be null");
@@ -150,8 +150,8 @@ public class BasicCardDeck implements CardDeck {
          * so the latest supplied will have effect.
          *
          * @param rank Minimum card rank
-         * @throws NullPointerException if null value is supplied
          * @return BasicCardDeck builder instance
+         * @throws NullPointerException if null value is supplied
          */
         public Builder withStartingRank(Rank rank) {
             Objects.requireNonNull(rank, "Provided rank cannot be null");
@@ -165,8 +165,8 @@ public class BasicCardDeck implements CardDeck {
          * If this method isn't used, the card deck will be built with no jokers in it.
          *
          * @param jokersAmount Jokers amount
-         * @throws IllegalArgumentException if invalid amounts of joker is supplied
          * @return BasicCardDeck builder instance
+         * @throws IllegalArgumentException if invalid amounts of joker is supplied
          */
         public Builder withJokers(int jokersAmount) {
             if (jokersAmount < MINIMUM_JOKERS_AMOUNT || jokersAmount > MAXIMUM_JOKERS_AMOUNT) {
@@ -180,9 +180,9 @@ public class BasicCardDeck implements CardDeck {
          * Builds card deck with another card deck.
          *
          * @param cardDeck A card deck
-         * @throws NullPointerException if null value is supplied
-         * @throws IllegalArgumentException if invalid card deck is supplied
          * @return BasicCardDeck builder instance
+         * @throws NullPointerException     if null value is supplied
+         * @throws IllegalArgumentException if invalid card deck is supplied
          */
         public Builder withCardDeck(CardDeck cardDeck) {
             Objects.requireNonNull(cardDeck, "Cannot add null card deck");
