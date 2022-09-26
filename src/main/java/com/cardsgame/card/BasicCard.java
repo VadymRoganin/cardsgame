@@ -70,7 +70,7 @@ public class BasicCard implements Card, Comparable<BasicCard> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(rank, suit);
+        return Objects.hash(rank, suit, folded);
     }
 
     @Override
@@ -78,6 +78,7 @@ public class BasicCard implements Card, Comparable<BasicCard> {
         return "BasicCard{" +
                 "rank=" + rank +
                 ", suit=" + suit +
+                ", folded=" + folded +
                 '}';
     }
 }
