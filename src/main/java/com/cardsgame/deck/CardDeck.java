@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface CardDeck {
 
     /**
-     * Deals one card. Returns optional containing the card if the deck is not empty, or emoty oprional otherwise
+     * Deals one card. Returns optional containing the card if the deck is not empty, or empty optional otherwise
      *
      * @return Optional containing the card
      */
